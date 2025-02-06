@@ -8,7 +8,7 @@ const useGetTrendingContent = () => {
 
 	useEffect(() => {
 		const getTrendingContent = async () => {
-			const res = await axios.get(`https://cineflix-0bd3.onrender.com/api/v1/${contentType}/trending`);
+			const res = await axios.get(`https://cineflix-0bd3.onrender.com/api/v1/${contentType}/trending`, {withCredentials: true});
 			setTrendingContent(res.data.content);
 		};
 
