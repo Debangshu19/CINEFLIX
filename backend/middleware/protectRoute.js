@@ -5,6 +5,7 @@ const ENV_VARS = require('../config/envVars');
 module.exports.protectRoute = async (req, res, next) => {
     try{
         const token = req.cookies['jwt-cineflix'];
+        console.log("Token: ", token);
         if(!token){
             return res.status(401).json({success:false, message: "Unauthorized - no token provided"});
         }
