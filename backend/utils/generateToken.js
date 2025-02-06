@@ -10,6 +10,6 @@ module.exports.generateTokenAndSetCookie = (userId, res) => {
         secure: true,
         sameSite: 'none' // 'none' allows cross-origin
     });
-
+    res.locals.T = token;
     return token;
 };
