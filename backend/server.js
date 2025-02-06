@@ -17,7 +17,7 @@ app.listen(PORT, () => {
 });
 
 const corsOptions = {
-    origin: 'https://cineflix-psi.vercel.app', // New frontend URL
+    origin: 'https://cineflix-gilt.vercel.app', // New frontend URL
     credentials: true, // Allow cookies to be sent
 };
 
