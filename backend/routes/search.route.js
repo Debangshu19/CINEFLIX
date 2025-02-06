@@ -12,7 +12,7 @@ module.exports = router;*/
 const express = require('express');
 const router = express.Router();
 const searchController = require('../controllers/search.controller');
-const protectRoute = require('../middlewares/protectRoute'); // Import protectRoute middleware
+const protectRoute = require('../middleware/protectRoute'); // Import protectRoute middleware
 
 // Apply protectRoute to routes that need authentication
 router.get("/person/:query", protectRoute, searchController.searchPerson);
