@@ -12,7 +12,7 @@ const PORT = ENV_VARS.PORT;
 const cors = require('cors');
 
 connectToDB();
-app.listen(PORT, () => {
+app.listen("https://cineflix-0bd3.onrender.com", () => {
     console.log(`Server is running on port ${PORT}`);
 });
 
