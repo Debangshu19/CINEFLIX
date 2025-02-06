@@ -17,7 +17,7 @@ app.listen(PORT, () => {
 });
 
 const corsOptions = {
-    origin: 'http://localhost:5173', // New frontend URL
+    origin: 'https://cineflix-lake.vercel.app', // New frontend URL
     credentials: true, // Allow cookies to be sent
 };
 
