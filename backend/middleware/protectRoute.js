@@ -29,7 +29,7 @@ const jwt = require('jsonwebtoken');
 const ENV_VARS = require('../config/envVars');
 
 module.exports.protectRoute = async (req, res, next) => {
-    const token = req.headers['authorization']?.split(' ')[1] || localStorage.getItem('jwtToken'); // Get token from Authorization header
+    const token = req.headers['authorization']?.split(' ')[1] || req.cookies['jwt-cineflix'];
     console.log("Token recieved in protectRoute: ", token);
 
     if (!token) {
