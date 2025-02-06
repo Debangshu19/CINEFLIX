@@ -8,11 +8,11 @@ const tvRoutes = require('./routes/tv.route');
 const searchRoutes = require('./routes/search.route');
 const middleware = require('./middleware/protectRoute');
 const connectToDB = require('./config/db');
-const PORT = ENV_VARS.PORT;
+const PORT = https://cineflix-0bd3.onrender.com;
 const cors = require('cors');
 
 connectToDB();
-app.listen("https://cineflix-0bd3.onrender.com", () => {
+app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
 
