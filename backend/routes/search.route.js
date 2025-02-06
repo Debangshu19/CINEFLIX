@@ -12,13 +12,13 @@ module.exports = router;*/
 const express = require('express');
 const router = express.Router();
 const searchController = require('../controllers/search.controller');
-const protectRoute = require('../middleware/protectRoute'); // Import protectRoute middleware
+const middleware = require('../middleware/protectRoute'); // Import protectRoute middleware
 
 // Apply protectRoute to routes that need authentication
-router.get("/person/:query", protectRoute, searchController.searchPerson);
-router.get("/movie/:query", protectRoute, searchController.searchMovie);
-router.get("/tv/:query", protectRoute, searchController.searchTv);
-router.get("/history", protectRoute, searchController.getSearchHistory); // ✅ Protecting search history
-router.delete("/history/:id", protectRoute, searchController.removeItemFromSearchHistory); // ✅ Protecting delete history
+router.get("/person/:query", middleware.protectRoute, searchController.searchPerson);
+router.get("/movie/:query", middleware.protectRoute, searchController.searchMovie);
+router.get("/tv/:query", middleware.protectRoute, searchController.searchTv);
+router.get("/history", middleware.protectRoute, searchController.getSearchHistory); // ✅ Protecting search history
+router.delete("/history/:id", middleware.protectRoute, searchController.removeItemFromSearchHistory); // ✅ Protecting delete history
 
 module.exports = router;
