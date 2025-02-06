@@ -8,7 +8,7 @@ const tvRoutes = require('./routes/tv.route');
 const searchRoutes = require('./routes/search.route');
 const middleware = require('./middleware/protectRoute');
 const connectToDB = require('./config/db');
-const PORT = https://cineflix-0bd3.onrender.com;
+const PORT = "https://cineflix-0bd3.onrender.com";
 const cors = require('cors');
 
 connectToDB();
