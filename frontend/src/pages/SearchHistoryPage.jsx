@@ -26,7 +26,7 @@ const SearchHistoryPage = () => {
 	useEffect(() => {
 		const getSearchHistory = async () => {
 			try {
-				const res = await axios.get(`https://cineflix-03vm.onrender.com/api/v1/search/history`);
+				const res = await axios.get(`https://cineflix-0bd3.onrender.com/api/v1/search/history`);
         console.log(res)
 				setSearchHistory(res.data.content);
 			} catch (error) {
@@ -38,7 +38,7 @@ const SearchHistoryPage = () => {
 
 	const handleDelete = async (entry) => {
 		try {
-			await axios.delete(`https://cineflix-03vm.onrender.com/api/v1/search/history/${entry.id}`);
+			await axios.delete(`https://cineflix-0bd3.onrender.com/api/v1/search/history/${entry.id}`);
 			setSearchHistory(searchHistory.filter((item) => item.id !== entry.id));
 		} catch (error) {
 			toast.error("Failed to delete search item");
