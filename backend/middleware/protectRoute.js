@@ -30,6 +30,7 @@ const ENV_VARS = require('../config/envVars');
 
 module.exports.protectRoute = async (req, res, next) => {
     const token = req.headers['authorization']?.split(' ')[1]; // Get token from Authorization header
+    console.log("Token recieved in protectRoute: ", token);
 
     if (!token) {
         return res.status(401).json({ success: false, message: "No token provided, access denied" });
