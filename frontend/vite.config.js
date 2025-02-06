@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     proxy: {
       "/api": {
-        target: "https://cineflix-03vm.onrender.com",
+        target: "https://cineflix-0bd3.onrender.com",
       }
     }
   }
