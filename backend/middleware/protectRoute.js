@@ -1,4 +1,4 @@
-const jwt = require('jsonwebtoken');
+/*const jwt = require('jsonwebtoken');
 const User = require('../models/user.model');
 const ENV_VARS = require('../config/envVars');
 
@@ -22,5 +22,24 @@ module.exports.protectRoute = async (req, res, next) => {
     }catch(err){
         console.log("Error in protectRoute middleware: ", err);
         res.status(500).json({success:false, message: "Internal server error"});
+    }
+};
+*/
+const jwt = require('jsonwebtoken');
+const ENV_VARS = require('../config/envVars');
+
+module.exports.protectRoute = async (req, res, next) => {
+    const token = req.headers['authorization']?.split(' ')[1]; // Get token from Authorization header
+
+    if (!token) {
+        return res.status(401).json({ success: false, message: "No token provided, access denied" });
+    }
+
+    try {
+        const decoded = jwt.verify(token, ENV_VARS.JWT_SECRET);
+        req.user = decoded;
+        next(); // Allow access to the protected route
+    } catch (err) {
+        res.status(401).json({ success: false, message: "Invalid token" });
     }
 };
