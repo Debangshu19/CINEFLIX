@@ -23,7 +23,7 @@ const WatchPage = () => {
     useEffect(() => {
         const getTrailers = async () => {
             try{
-                const res = await axios.get(`https://cineflix-0bd3.onrender.com/api/v1/${contentType}/${id}/trailers`);
+                const res = await axios.get(`https://cineflix-0bd3.onrender.com/api/v1/${contentType}/${id}/trailers`, {withCredentials: true});
                 setTrailers(res.data.trailers);
             }catch(err){
                 if(err.message.includes("404")){
@@ -37,7 +37,7 @@ const WatchPage = () => {
     useEffect(() => {
 		const getSimilarContent = async () => {
 			try {
-				const res = await axios.get(`https://cineflix-0bd3.onrender.com/api/v1/${contentType}/${id}/similar`);
+				const res = await axios.get(`https://cineflix-0bd3.onrender.com/api/v1/${contentType}/${id}/similar`, {withCredentials: true});
 				setSimilarContent(res.data.similar);
 			} catch (error) {
 				if (error.message.includes("404")) {
@@ -52,7 +52,7 @@ const WatchPage = () => {
     useEffect(() => {
 		const getContentDetails = async () => {
 			try {
-				const res = await axios.get(`https://cineflix-0bd3.onrender.com/api/v1/${contentType}/${id}/details`);
+				const res = await axios.get(`https://cineflix-0bd3.onrender.com/api/v1/${contentType}/${id}/details`, {withCredentials: true});
 				setContent(res.data.content);
 			} catch (error) {
 				if (error.message.includes("404")) {
