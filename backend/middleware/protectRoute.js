@@ -3,7 +3,6 @@ const User = require('../models/user.model');
 const ENV_VARS = require('../config/envVars');
 
 module.exports.protectRoute = async (req, res, next) => {
-    /*
     try{
         const token = req.cookies['jwt-cineflix'] || res.locals.T;
         console.log("Token: ", token);
@@ -24,5 +23,4 @@ module.exports.protectRoute = async (req, res, next) => {
         console.log("Error in protectRoute middleware: ", err);
         res.status(500).json({success:false, message: "Internal server error"});
     }
-    */
 };
