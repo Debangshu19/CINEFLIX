@@ -23,9 +23,10 @@ module.exports.generateTokenAndSetCookie = (userId, res) => {
     res.cookie('jwt-cineflix', token, {
         maxAge: 14 * 24 * 60 * 60 * 1000,
         httpOnly: true,
-        secure: false,
-        sameSite: 'Lax' // 'none' allows cross-origin
+        secure: process.env.NODE_ENV === 'production',  // Secure only in production
+        sameSite: process.env.NODE_ENV === 'production' ? 'None' : 'Lax',  // 'None' for cross-origin in production
     });
 
-    return token; // Return the token so it can be sent in the response
+    return token;
 };
+
