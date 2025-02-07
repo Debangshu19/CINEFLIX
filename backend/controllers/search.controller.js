@@ -80,6 +80,7 @@ module.exports.searchTv = async (req, res) => {
 
 module.exports.getSearchHistory = async (req, res) => {
     try{
+        console.log("User data from getSearchHistory: ", req.user);
         res.status(200).json({success:true, content: req.user.searchHistory});
     }catch(err){
         console.log("Error in getSearchHistory", err.message);
