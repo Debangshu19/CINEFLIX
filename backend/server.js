@@ -8,7 +8,7 @@ const tvRoutes = require('./routes/tv.route');
 const searchRoutes = require('./routes/search.route');
 const middleware = require('./middleware/protectRoute');
 const connectToDB = require('./config/db');
-const PORT = ENV_VARS.PORT;
+const PORT = process.env.PORT || ENV_VARS.PORT || 5000;
 const cors = require('cors');
 
 connectToDB();
