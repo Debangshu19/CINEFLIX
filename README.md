@@ -99,7 +99,7 @@ CineFlix is a full-stack movie and TV show discovery web application that allows
 For any queries or feedback, feel free to reach out:
 
 - **Developer:** Debangshu Dey
-- **Email:** [debangshu.dey@example.com](mailto\:debangshu.dey@example.com)
+- **Email:** [debangshu.dey@example.com](mailto\:debangshu.dey47@gmail.com)
 - **LinkedIn:** [linkedin.com/in/debangshudey](https://www.linkedin.com/in/debangshudey)
 
 ---
