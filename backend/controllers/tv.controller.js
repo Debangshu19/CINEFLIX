@@ -44,7 +44,7 @@ module.exports.getSimilarTvs = async (req, res) => {
     const {id} = req.params;
     try{
         const data = await tvService.fetchFromTMDB(`https://api.themoviedb.org/3/tv/${id}/similar?api_key=${api}&language=en-US&page=1`);
-        res.status(200).json({success:true, content: data.results});
+        res.status(200).json({success:true, similar: data.results});
     }catch(err){
         res.status(500).json({success:false, message: "Internal server error"});
     }
