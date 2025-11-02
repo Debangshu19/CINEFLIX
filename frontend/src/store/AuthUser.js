@@ -77,7 +77,7 @@ export const useAuthStore = create((set) => ({
             );
             // Store the token in localStorage and in the state
             //localStorage.setItem('jwtToken', response.data.token);
-            set({ user: response.data.user, /*token: response.data.token*/, isSigningUp: false });
+            set({ user: response.data.user, isSigningUp: false });
             toast.success("Account created successfully");
         } catch (error) {
             toast.error(error.response.data.message || "Sign Up failed");
@@ -96,7 +96,7 @@ export const useAuthStore = create((set) => ({
             );
             // Store the token in localStorage and in the state
             //localStorage.setItem('jwtToken', response.data.token);
-            set({ user: response.data.user, /*token: response.data.token*/, isLoggingIn: false });
+            set({ user: response.data.user, isLoggingIn: false });
             toast.success("Logged in successfully");
         } catch (error) {
             toast.error(error.response.data.message || "Log in failed");
@@ -110,7 +110,7 @@ export const useAuthStore = create((set) => ({
             const response = await axios.post("https://cineflix-0bd3.onrender.com/api/v1/auth/logout", {}, { withCredentials: true });
             // Remove the token from localStorage
             //localStorage.removeItem('jwtToken');
-            set({ user: null, /*token: null*/, isLoggingOut: false });
+            set({ user: null, isLoggingOut: false });
             toast.success("Logged out successfully");
         } catch (err) {
             set({ isLoggingOut: false });
