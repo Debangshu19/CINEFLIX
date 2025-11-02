@@ -8,7 +8,7 @@ module.exports.searchPerson = async (req, res) => {
     try{
         const response = await searchService.fetchFromTMDB(`https://api.themoviedb.org/3/search/person?query=${query}&api_key=${api}&include_adult=false&language=en-US&page=1`);
         if(response.results.length === 0){
-            res.status(404).json({success:false, message: "No results found"});
+            return res.status(404).json({success:false, message: "No results found"});
         }
         await User.findByIdAndUpdate(req.user._id, {
             $push: {
@@ -33,7 +33,7 @@ module.exports.searchMovie = async (req, res) => {
     try{
         const response = await searchService.fetchFromTMDB(`https://api.themoviedb.org/3/search/movie?query=${query}&api_key=${api}&include_adult=false&language=en-US&page=1`);
         if(response.results.length === 0){
-            res.status(404).json({success:false, message: "No results found"});
+            return res.status(404).json({success:false, message: "No results found"});
         }
         await User.findByIdAndUpdate(req.user._id, {
             $push: {
@@ -58,7 +58,7 @@ module.exports.searchTv = async (req, res) => {
     try{
         const response = await searchService.fetchFromTMDB(`https://api.themoviedb.org/3/search/tv?query=${query}&api_key=${api}&include_adult=false&language=en-US&page=1`);
         if(response.results.length === 0){
-            res.status(404).json({success:false, message: "No results found"});
+            return res.status(404).json({success:false, message: "No results found"});
         }
         await User.findByIdAndUpdate(req.user._id, {
             $push: {
